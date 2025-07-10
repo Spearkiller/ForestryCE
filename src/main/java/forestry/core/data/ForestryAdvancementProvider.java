@@ -69,9 +69,11 @@ public class ForestryAdvancementProvider extends ForgeAdvancementProvider {
 	}
 
 	private static class CoreAdvancements implements AdvancementGenerator {
+		
+
 		@Override
 		public void generate(HolderLookup.Provider registries, Consumer<Advancement> writer, ExistingFileHelper existingFileHelper) {
-			ItemStack icon = SpeciesUtil.BEE_TYPE.get().createStack(ForestryBeeSpecies.INDUSTRIOUS, BeeLifeStage.QUEEN);
+			ItemStack icon = SpeciesUtil.BEE_TYPE.get().createStack(ForestryBeeSpecies.FOREST, BeeLifeStage.QUEEN);
 
 			//Forestry
 			Advancement root = advancement()
@@ -127,7 +129,7 @@ public class ForestryAdvancementProvider extends ForgeAdvancementProvider {
 
 				//The Beekeeper
 				//A reference to the Jason Statham movie of the same name
-				Advancement apiaristsArmor = advancement()
+				Advancement apiarists_armor = advancement()
 					.parent(smoked)
 					.display(
 						ApicultureItems.APIARIST_HELMET.stack(),
@@ -154,7 +156,7 @@ public class ForestryAdvancementProvider extends ForgeAdvancementProvider {
 					//Sting Operation
 					//Cannot figure this one out yet.
 					Advancement theBeekeeper = advancement()
-						.parent(apiaristsArmor)
+						.parent(apiarists_armor)
 						.display(
 							ApicultureItems.APIARIST_CHEST.stack(),
 							Component.translatable("advancements.forestry.sting_operation.title"),
