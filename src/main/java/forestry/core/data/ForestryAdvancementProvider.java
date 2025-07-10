@@ -7,6 +7,7 @@ import forestry.api.apiculture.ForestryBeeSpecies;
 import forestry.api.apiculture.genetics.BeeLifeStage;
 import forestry.api.arboriculture.ForestryTreeSpecies;
 import forestry.api.arboriculture.genetics.TreeLifeStage;
+import forestry.apiculture.BeeSpecies;
 import forestry.apiculture.blocks.BlockAlvearyType;
 import forestry.apiculture.blocks.BlockTypeApiculture;
 import forestry.apiculture.features.ApicultureBlocks;
@@ -15,6 +16,7 @@ import forestry.apiculture.features.ApicultureTiles;
 import forestry.apiculture.items.EnumHoneyComb;
 import forestry.arboriculture.features.ArboricultureItems;
 import forestry.arboriculture.features.CharcoalBlocks;
+import forestry.core.blocks.BlockTypeCoreTesr;
 import forestry.core.blocks.MachineProperties;
 import forestry.core.data.recipe.ForestryRecipeProvider;
 import forestry.core.features.CoreBlocks;
@@ -426,8 +428,6 @@ public class ForestryAdvancementProvider extends ForgeAdvancementProvider {
 								 * Advancements for end-of-line forestry saplings end here
 								 */
 
-								//TODO: Add an advancement for unlocking all Tree Species
-								//TODO: Add an advancement for unlocking all Bee Species
 								//TODO: Add an advancement for catching a butterfly?
 
 						//Honey, I'm Home!
@@ -517,6 +517,39 @@ public class ForestryAdvancementProvider extends ForgeAdvancementProvider {
 							InventoryChangeTrigger.TriggerInstance.hasItems(EnergyBlocks.ENGINES.get(EngineBlockType.BIOGAS).get()), //TODO: Replace this with a trigger from taking damage to a clockwork engine
 							get_engine,
 							writer, FrameType.CHALLENGE, true, true, true);
+
+					//When Is a Raven Like a Writing Desk?
+					//A reference to the quote which is from like, Lewis Carrol or something? I can't remember and I'm too lazy to look it up right now.
+					Advancement get_escritoire = makeSimpleAdvancement(
+						"get_escritoire",
+						CoreBlocks.BASE.get(BlockTypeCoreTesr.ESCRITOIRE).stack(),
+						InventoryChangeTrigger.TriggerInstance.hasItems(CoreBlocks.BASE.get(BlockTypeCoreTesr.ESCRITOIRE).get()),
+						get_carpenter,
+						writer);
+
+						//Eureka
+						Advancement use_research_note = makeSimpleAdvancement(
+							"use_research_note",
+							CoreItems.RESEARCH_NOTE.stack(),
+							InventoryChangeTrigger.TriggerInstance.hasItems(CoreItems.RESEARCH_NOTE.get()),
+							get_escritoire,
+							writer);
+
+							//Master Arborist
+							Advancement complete_tree_research = makeSimpleAdvancement(
+								"complete_tree_research",
+								SpeciesUtil.TREE_TYPE.get().createStack(ForestryTreeSpecies.IPE, TreeLifeStage.SAPLING), //TODO: Replace this with Golden Elm. It's not the hardest to get but it is a unique icon for the advancement.
+								InventoryChangeTrigger.TriggerInstance.hasItems(CoreItems.RESEARCH_NOTE.get()), //TODO: Replace this with something that triggers when you have researched all tree species
+								use_research_note,
+								writer, FrameType.CHALLENGE, true, true, false);
+
+							//Master Apiarist
+							Advancement complete_bee_research = makeSimpleAdvancement(
+								"complete_bee_research",
+								SpeciesUtil.BEE_TYPE.get().createStack(ForestryBeeSpecies.IMPERIAL, BeeLifeStage.QUEEN),
+								InventoryChangeTrigger.TriggerInstance.hasItems(CoreItems.RESEARCH_NOTE.get()), //TODO: Replace this with something that triggers when you have researched all bee species
+								use_research_note,
+								writer, FrameType.CHALLENGE, true, true, false);
 
 				//You Spin Me Right Round
 				Advancement get_centrifuge = makeSimpleAdvancement(
