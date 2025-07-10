@@ -1,0 +1,77 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "request": "launch",
+      "name": "Client",
+      "presentation": {
+        "group": "Mod Development - ForestryCE",
+        "order": 0
+      },
+      "projectName": "ForestryCE",
+      "mainClass": "net.neoforged.devlaunch.Main",
+      "args": [
+        "@C:\\Users\\Brad\\Documents\\Unit 0\\Minecrap\\New Mods\\Forestry Community Edition\\My Fork\\ForestryCE\\build\\moddev\\clientRunProgramArgs.txt"
+      ],
+      "vmArgs": [
+        "@C:\\Users\\Brad\\Documents\\Unit 0\\Minecrap\\New Mods\\Forestry Community Edition\\My Fork\\ForestryCE\\build\\moddev\\clientRunVmArgs.txt",
+        "-Dfml.modFolders\u003dforestry%%C:\\Users\\Brad\\Documents\\Unit 0\\Minecrap\\New Mods\\Forestry Community Edition\\My Fork\\ForestryCE\\bin\\main"
+      ],
+      "cwd": "${workspaceFolder}\\run",
+      "env": {
+        "MOD_CLASSES": "forestry%%C:\\Users\\Brad\\Documents\\Unit 0\\Minecrap\\New Mods\\Forestry Community Edition\\My Fork\\ForestryCE\\bin\\main"
+      },
+      "console": "internalConsole",
+      "shortenCommandLine": "none"
+    },
+    {
+      "type": "java",
+      "request": "launch",
+      "name": "Data",
+      "presentation": {
+        "group": "Mod Development - ForestryCE",
+        "order": 1
+      },
+      "projectName": "ForestryCE",
+      "mainClass": "net.neoforged.devlaunch.Main",
+      "args": [
+        "@C:\\Users\\Brad\\Documents\\Unit 0\\Minecrap\\New Mods\\Forestry Community Edition\\My Fork\\ForestryCE\\build\\moddev\\dataRunProgramArgs.txt"
+      ],
+      "vmArgs": [
+        "@C:\\Users\\Brad\\Documents\\Unit 0\\Minecrap\\New Mods\\Forestry Community Edition\\My Fork\\ForestryCE\\build\\moddev\\dataRunVmArgs.txt",
+        "-Dfml.modFolders\u003dforestry%%C:\\Users\\Brad\\Documents\\Unit 0\\Minecrap\\New Mods\\Forestry Community Edition\\My Fork\\ForestryCE\\bin\\main"
+      ],
+      "cwd": "${workspaceFolder}\\run",
+      "env": {
+        "MOD_CLASSES": "forestry%%C:\\Users\\Brad\\Documents\\Unit 0\\Minecrap\\New Mods\\Forestry Community Edition\\My Fork\\ForestryCE\\bin\\main"
+      },
+      "console": "internalConsole",
+      "shortenCommandLine": "none"
+    },
+    {
+      "type": "java",
+      "request": "launch",
+      "name": "Server",
+      "presentation": {
+        "group": "Mod Development - ForestryCE",
+        "order": 2
+      },
+      "projectName": "ForestryCE",
+      "mainClass": "net.neoforged.devlaunch.Main",
+      "args": [
+        "@C:\\Users\\Brad\\Documents\\Unit 0\\Minecrap\\New Mods\\Forestry Community Edition\\My Fork\\ForestryCE\\build\\moddev\\serverRunProgramArgs.txt"
+      ],
+      "vmArgs": [
+        "@C:\\Users\\Brad\\Documents\\Unit 0\\Minecrap\\New Mods\\Forestry Community Edition\\My Fork\\ForestryCE\\build\\moddev\\serverRunVmArgs.txt",
+        "-Dfml.modFolders\u003dforestry%%C:\\Users\\Brad\\Documents\\Unit 0\\Minecrap\\New Mods\\Forestry Community Edition\\My Fork\\ForestryCE\\bin\\main"
+      ],
+      "cwd": "${workspaceFolder}\\run\\server",
+      "env": {
+        "MOD_CLASSES": "forestry%%C:\\Users\\Brad\\Documents\\Unit 0\\Minecrap\\New Mods\\Forestry Community Edition\\My Fork\\ForestryCE\\bin\\main"
+      },
+      "console": "internalConsole",
+      "shortenCommandLine": "none"
+    }
+  ]
+}
